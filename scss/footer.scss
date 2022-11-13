@@ -1,0 +1,116 @@
+@import 'adaptive';
+@import 'vars';
+
+.footer {
+background-color: $textColor;
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: $textColor2;
+      @include adaptive-value("padding-left", 50, 20, 1);
+      @include adaptive-value("padding-right", 50, 20, 1);
+      @include adaptive-value("padding-top", 250, 50, 1);
+      @include adaptive-value("padding-bottom", 250, 50, 1);
+      @media(max-width:800px){
+         flex-direction: column;
+      }
+   }
+
+   &__titleblock {
+      flex: 0 1 33.5%;
+   }
+
+   &__titleblock-title {
+      @include adaptive-value("font-size", 25, 16, 1);
+      font-weight: 700;
+      text-transform: uppercase;
+
+   }
+
+   &__titleblock-text {
+      @include adaptive-value("margin-top", 40, 20, 1);
+      @include adaptive-value("font-size", 23, 14, 1);
+      line-height: 1.1;
+   }
+
+   &__titleblock-social {
+      @include adaptive-value("margin-top", 40, 20, 1);
+      display: flex;
+      gap: 10px;
+   }
+
+   &__menu {
+      display: flex;
+      gap:30px;
+      @media(max-width:550px){
+         align-items: center;
+         flex-direction: column;
+         gap: 40px;
+      }
+   }
+
+
+   &__menu-button {
+      @include adaptive-value("font-size", 25, 16, 1);
+      font-weight: 700;
+      text-transform: uppercase;
+   }
+
+   &__menu-list {
+      @include adaptive-value("margin-top", 40, 20, 1);
+   }
+
+   @media(max-width:550px){
+      &__menu-button {
+      position: relative;
+      cursor: pointer;
+      width: 50vw;
+         &::before{
+            content: '';
+            position: absolute;
+            top: 3px;right: 0px;
+            width: 0;
+            height: 0;
+            transition: 0.3s;
+            border-left: 7px solid transparent;
+            border-top: 7px solid $textColor2;
+            border-right: 7px solid transparent;
+         }
+      &._active{
+         &::before{
+            content: '';
+            rotate:(180deg);
+         }
+      }
+   }
+      &__menu-list {
+         display: none;
+      }
+      &__menu-list._active {
+         display: block;
+      }
+}
+
+   &__menu-item {
+      @include adaptive-value("font-size", 23, 14, 1);
+      line-height: 1;
+      &:not(:last-child){
+         margin-bottom: 25px;
+      }
+   }
+   &__menu-link{
+      color: inherit;
+      &:hover{
+         color: $yellow;
+      }
+   }
+}
+.social-link {
+   display: flex;
+   gap: 15px;
+}
+.social-img {
+   width: 40px;
+   height: 40px;
+}

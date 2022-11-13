@@ -1,0 +1,89 @@
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.background-item {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.title {
+  font-family: "Grand Hotel";
+  font-size: 100px;
+  color: #ffc200;
+}
+@media (max-width: 1330px) {
+  .title {
+    font-size: calc(30px + 70 * ((100vw - 320px) / 1010));
+  }
+}
+
+.text {
+  padding-top: 60px;
+  font-size: 25px;
+  color: #ffffff;
+}
+@media (max-width: 1330px) {
+  .text {
+    padding-top: calc(20px + 40 * ((100vw - 320px) / 1010));
+  }
+}
+@media (max-width: 1330px) {
+  .text {
+    font-size: calc(14px + 11 * ((100vw - 320px) / 1010));
+  }
+}
+
+.button {
+  margin-top: 65px;
+  background-color: #ffc200;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #333333;
+  border: 2px solid #ffc200;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 55px;
+  padding-left: 55px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+@media (max-width: 1330px) {
+  .button {
+    margin-top: calc(25px + 40 * ((100vw - 320px) / 1010));
+  }
+}
+@media (max-width: 1330px) {
+  .button {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 1010));
+  }
+}
+@media (max-width: 1330px) {
+  .button {
+    padding-top: calc(10px + 5 * ((100vw - 320px) / 1010));
+  }
+}
+@media (max-width: 1330px) {
+  .button {
+    padding-bottom: calc(10px + 5 * ((100vw - 320px) / 1010));
+  }
+}
+@media (max-width: 1330px) {
+  .button {
+    padding-right: calc(25px + 30 * ((100vw - 320px) / 1010));
+  }
+}
+@media (max-width: 1330px) {
+  .button {
+    padding-left: calc(25px + 30 * ((100vw - 320px) / 1010));
+  }
+}
+.button:hover {
+  color: #ffc200;
+  background-color: #333333;
+}

@@ -1,0 +1,682 @@
+@import 'adaptive';
+@import 'vars';
+@import 'NullStyle';
+
+@import url(../css/fonts.css);
+@import url(../css/header.css);
+@import url(../css/common.css);
+@import url(../css/footer.css);
+
+body{
+   font-family: Montserrat;
+   height: 100%;
+}
+.wrapper{
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+// main ======================================================================
+.main {
+   position: relative;
+   background-color: $textColor;
+   height: 100vh;
+   &__background {
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;left: 0;
+   }
+   &__background-content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+   }
+   &__background-img1 {
+      top: 0;left: 0;
+      width: 42%;
+      height: 100%;
+   }
+
+   &__background-img2 {
+      top: 0;right: 0;
+      width: 70%;
+      height: 100%;
+   }
+
+   &__background-item1 {
+      width: 7.3vw;
+      height: 7.3vw;
+      top: 15.4vh;
+      right: 13.75vw;
+      animation: rotate 60s ease-out infinite;
+   }
+
+   &__background-item2 {
+      width: 6.4vw;
+      height: 8.5vw;
+      top: 39.4vh;
+      left: 36.2vw;
+      animation: rotateBack 70s ease-out infinite;
+   }
+
+   &__background-item3 {
+      width: 8vw;
+      height: 7.5vw;
+      top:80.6vh;
+      right: 36.5vw;
+      animation: rotate 55s ease-out infinite;
+   }
+
+   &__background-item4 {
+      width: 5.5vw;
+      height: 7.2vw;
+      top:64.4vh;
+      right: 5vw;
+      animation: rotateBack 67s ease-out infinite;
+   }
+
+   &__background-item5 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:14.4vh;
+      left: 43.3vw;
+   }
+
+   &__background-item6 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:36.8vh;
+      right: 8.7vw;
+   }
+
+   &__background-item7 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:81.2vh;
+      left: 44vw;
+   }
+
+   &__background-item8 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:85vh;
+      right: 23.3vw;
+   }
+
+   &__background-item9 {
+      width: 1.2vw;
+      height: 1.8vw;
+      top:92.5vh;
+      right: 12.3vw;
+   }
+
+   &__container {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: end;
+      @include adaptive-value("padding-top", 80, 30, 1);
+   }
+
+   &__textblock {
+      flex: 1 1 auto;
+      z-index: 2;
+      max-width: 54%;
+   }
+
+   &__title {
+      font-family: "Grand hotel";
+      color: $yellow;
+      @include adaptive-value("font-size", 124, 30, 1);
+   }
+
+   &__text {
+      @include adaptive-value("margin-top", 50, 15, 1);
+      color: $textColor2;
+      @include adaptive-value("font-size", 28, 18, 1);
+      line-height: 1.2;
+   }
+
+   &__button {
+      @include adaptive-value("margin-top", 40, 10, 1);
+   }
+}
+@keyframes rotate{
+   0%{rotate:(0deg);}
+   100%{rotate:(360deg);}
+}
+@keyframes rotateBack{
+   0%{rotate:(0deg);}
+   100%{rotate:(-360deg);}
+}
+// best seller=====================================================================
+.bestseller {
+
+   &__container {
+      @include adaptive-value("padding-top", 140, 30, 1);
+   }
+
+   &__textblock {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+   }
+
+   &__title {
+      font-family: "Grand hotel";
+      @include adaptive-value("font-size", 75, 30, 1);
+   }
+
+   &__text {
+      @include adaptive-value("padding-top", 50, 15, 1);
+      @include adaptive-value("font-size", 25, 14, 1);
+   }
+
+   &__products {
+      @include adaptive-value("padding-top", 80, 20, 1);
+      @include adaptive-value("padding-bottom", 80, 20, 1);
+      display: flex;
+      gap: 20px;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+   }
+}
+
+.bs-product {
+   max-width: 260px;
+   &__img {
+      display: inline-block;
+      position: relative;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+   }
+
+   &__img-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;left: 0;
+      object-fit: cover;
+   }
+
+   &__textblock {
+      text-align: center;
+      margin-top: 15px;
+   }
+
+   &__title {
+      font-family: "Grand hotel";
+      @include adaptive-value("font-size", 40, 18, 1);
+   }
+
+   &__text {
+      @include adaptive-value("font-size", 16, 12, 1);
+      @include adaptive-value("margin-top", 20, 15, 1);
+      left: 1.4;
+   }
+}
+// taste==========================================================================
+.taste {
+   position: relative;
+   height: 100vh;
+   &__background {
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;left: 0;
+   }
+   &__background-content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+   }
+   &__background-img {
+      position: absolute;
+      bottom: 0;left: 0;
+      width: 100%;
+      height: 80%;
+   }
+
+   &__container {
+      @include adaptive-value("padding-top", 160, 0, 1);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media(max-width:700px){
+         flex-direction: column;
+      }
+   }
+
+   &__img {
+      flex: 0 0 48%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   &__img-img {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+   }
+   &__textblock {
+      @media(max-width:700px){
+         text-align: center;
+      }
+   }
+}
+// statistics======================================================================
+.statistics {
+   position: relative;
+   background-color: $background;
+   //height: 100vh;
+   &__background {
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;left: 0;
+   }
+   &__background-content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+   }
+   
+   &__background-item1 {
+      width: 6.4vw;
+      height: 8.5vw;
+      top: 23vh;
+      left: 4vw;
+      animation: rotateBack 100s ease-out infinite;
+   }
+   &__background-item2 {
+      width: 7.3vw;
+      height: 7.3vw;
+      top: 4.6vh;
+      right: 22vw;
+      animation: rotate 90s ease-out infinite;
+   }
+   &__background-item3 {
+      width: 8.9vw;
+      height: 7.3vw;
+      top:78.75vh;
+      left: 23vw;
+      animation: rotateBack 97s ease-out infinite;
+   }
+   
+   &__background-item4 {
+      width: 8vw;
+      height: 7.5vw;
+      top:81.6vh;
+      right: 32vw;
+      animation: rotate 85s ease-out infinite;
+   }
+   &__background-item5 {
+      width: 5.5vw;
+      height: 7.2vw;
+      top:58.75vh;
+      right: 4vw;
+      animation: rotateBack 97s ease-out infinite;
+   }
+
+   &__background-item6 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:31vh;
+      right: 8.7vw;
+   }
+
+   &__background-item7 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:6vh;
+      left: 24.5vw;
+   }
+
+   &__background-item8 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:89vh;
+      left: 6vw;
+   }
+   &__background-item9 {
+      width: 1.2vw;
+      height: 1.8vw;
+      top:87vh;
+      right: 11vw;
+   }
+
+   &__container {
+      @include adaptive-value("margin-top", 105, 30, 1);
+   }
+
+   &__textblock {
+      margin: 0 auto;
+      text-align: center;
+      max-width: 800px;
+   }
+
+   &__items {
+      @include adaptive-value("margin-top", 95, 30, 1);
+      @include adaptive-value("margin-bottom", 185, 50, 1);
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-around;
+   }
+
+   &__item {
+      background-color: $textColor;
+      width: 230px;
+      @include adaptive-value("width", 230, 125, 1);
+      @include adaptive-value("height", 230, 125, 1);
+      border: 5px solid $textColor2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @include adaptive-value("gap", 25, 15, 1);
+      z-index: 2;
+   }
+
+   &__item-numb {
+      font-weight: 700;
+      color: $yellow;
+      @include adaptive-value("font-size", 50, 25, 1);
+   }
+
+   &__item-name {
+      font-weight: 700;
+      color: $textColor2;
+      @include adaptive-value("font-size", 28, 14, 1);
+      text-transform: uppercase;
+   }
+}
+// grill=====================================================================================
+.grill {
+   position: relative;
+   height: 100vh;
+   &__background {
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;left: 0;
+   }
+   &__background-content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+   }
+   &__background-img {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 80%;
+   }
+
+   &__container {
+      @include adaptive-value("padding-bottom", 160, 0, 1);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @media(max-width:700px){
+         flex-direction: column;
+      }
+   }
+
+   &__img {
+      flex: 0 0 48%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   &__img-img {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+   }
+   &__textblock {
+      @media(max-width:700px){
+         text-align: center;
+      }
+   }
+}
+// fields===========================================================
+.fields {
+   position: relative;
+   height: 100vh;
+   &__background {
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;left: 0;
+   }
+   &__background-content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+   }
+   &__background-img {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+   &__background-layer {
+      position: absolute;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $yellow;
+      opacity: 0.7;
+   }
+
+   &__container {
+      height: 100%;
+      max-width: 920px;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      @include adaptive-value("gap", 60, 20, 1);
+   }
+
+   &__text {
+      @include adaptive-value("padding-top", 60, 20, 1);
+      @include adaptive-value("font-size", 44, 18, 1);
+      color: $textColor;
+   }
+   &__title {
+      font-family: "Grand Hotel";
+      @include adaptive-value("font-size", 74, 35, 1);
+      color: $textColor;
+   }
+}
+// subscribe===========================================================================
+.subscribe {
+   position: relative;
+   height: 100vh;
+   &__background {
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;left: 0;
+   }
+   &__background-content{
+      width: 100%;
+      height: 100%;
+      position: relative;
+   }
+   
+   &__background-item1 {
+      width: 6.4vw;
+      height: 8.5vw;
+      top: 23vh;
+      left: 4vw;
+      animation: rotateBack 100s ease-out infinite;
+   }
+   &__background-item2 {
+      width: 7.3vw;
+      height: 7.3vw;
+      top: 4.6vh;
+      right: 22vw;
+      animation: rotate 90s ease-out infinite;
+   }
+   &__background-item3 {
+      width: 8.9vw;
+      height: 7.3vw;
+      top:78.75vh;
+      left: 23vw;
+      animation: rotateBack 97s ease-out infinite;
+   }
+   
+   &__background-item4 {
+      width: 8vw;
+      height: 7.5vw;
+      top:81.6vh;
+      right: 32vw;
+      animation: rotate 85s ease-out infinite;
+   }
+   &__background-item5 {
+      width: 5.5vw;
+      height: 7.2vw;
+      top:58.75vh;
+      right: 4vw;
+      animation: rotateBack 97s ease-out infinite;
+   }
+
+   &__background-item6 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:31vh;
+      right: 8.7vw;
+   }
+
+   &__background-item7 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:6vh;
+      left: 24.5vw;
+   }
+
+   &__background-item8 {
+      width: 2.3vw;
+      height: 2.6vw;
+      top:89vh;
+      left: 6vw;
+   }
+   &__background-item9 {
+      width: 1.2vw;
+      height: 1.8vw;
+      top:87vh;
+      right: 11vw;
+   }
+
+   &__container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 845px;
+      z-index: 5;
+      position: relative;
+   }
+
+   &__title {
+      font-family: "Grand Hotel";
+      @include adaptive-value("font-size", 100, 30, 1);
+      color: $textColor;
+   }
+
+   &__text {
+      @include adaptive-value("padding-top", 60, 20, 1);
+      @include adaptive-value("font-size", 25, 14, 1);
+      color: $textColor;
+   }
+
+   &__form {
+      @include adaptive-value("margin-top", 80, 30, 1);
+      display: flex;
+      width: 80vw;
+      justify-content: center;
+      height: 65px;
+      @media(max-width:550px){
+         flex-direction: column;
+         height: auto;
+      }
+   }
+
+   &__input {
+      flex: 1 1 auto;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      font-size: 20px;
+      color: $textColor;
+      padding: 0 15px;
+      font-family: Montserrat;
+      height: 65px;
+      max-width: 550px;
+      transition: 0.3s;
+      &::placeholder{
+         opacity: 0.7;
+         transition: 0.3s;
+      }
+      &:focus{
+         box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+         &::placeholder{
+            opacity: 0;
+         }
+      }
+   }
+   &__input._error{
+      box-shadow: 0 0 15px red;
+   }
+
+   &__button {
+      background-color: $yellow;
+      @include adaptive-value("font-size", 20, 14, 1);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: $textColor;
+      border: 2px solid $yellow;
+      @include adaptive-value("padding-top", 15, 10, 1);
+      @include adaptive-value("padding-bottom", 15, 10, 1);
+      @include adaptive-value("padding-right", 55, 25, 1);
+      @include adaptive-value("padding-left", 55, 25, 1);
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      transition: 0.3s;
+      &:hover{
+         color: $yellow;
+         background-color: $textColor;
+      }
+      @media(max-width:550px){
+         border-radius: 5px;
+   } }
+}
+
